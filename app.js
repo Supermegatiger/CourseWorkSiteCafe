@@ -13,11 +13,11 @@ var indexRouter = require('./routes/index');
 var app = express();
 
 // view engine setup
-app.set('views', ('D:\\home\\site\\wwwroot\\views'));
+app.set('views', (__dirname + '/views'));
 app.set('view engine', 'hbs');
 app.engine("hbs", expressHbs(
   {
-      layoutsDir: "views", 
+      layoutsDir: "../views", 
       defaultLayout: "layout",
       extname: "hbs",
       runtimeOptions:{
@@ -34,7 +34,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static('D:\\home\\site\\wwwroot\\public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use('/', indexRouter);
 
