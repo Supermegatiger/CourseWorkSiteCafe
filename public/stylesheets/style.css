@@ -299,8 +299,9 @@ option{
 
 
 @media all and  (max-width: 1200px){
-	.main{
+	.main,footer{
 		width: 100%;
+		margin-left: 5%;
 	}
 	.nav_menu_link{
 		font-size: 150%;
