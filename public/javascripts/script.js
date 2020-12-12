@@ -30,7 +30,8 @@ $(window).resize();
 
 let navLinkImgClick = $(".nav_link_img:last").click(function(){
 	if(clCh){
-		$(".nav_search_cont").animate({ width: w },500, function(){$(".nav_search").toggle("clip")});
+		$(window).scrollTop(0);
+		$(".nav_search_cont").animate({ width: w },500, function(){$(".nav_search").toggle("clip")}.focus());
 		clCh = false;
 		
 	 }//else{
@@ -146,7 +147,7 @@ let $feat = $(".featured li").clone(true,true);
 let $nav = $("nav>div, nav>a.nav_menu_link").clone(true,true);
 
 let scrl = $(window).scrollTop();
-
+let bool = 0;
 
 
 $(window).scroll(function(){
@@ -161,7 +162,7 @@ $(window).scroll(function(){
 				scrl = $(window).scrollTop();
 				bool=1;
 				clCh = true;
-	}else{
+	}else if(bool){
 		
 			$("nav").html("");
 			$nav.clone(true, true).appendTo("nav");
@@ -170,9 +171,9 @@ $(window).scroll(function(){
 				$(".featured").css({"padding": "0","display":"none" });
 				$(".nav_menu_link").css({"padding":"1%"});
 				$(".cat_menu_link").css({"paddingLeft": "3%", "paddingRight": "3%"});
-				
+				bool = 0;
 				scrl = $(window).scrollTop();
-	}
+	}else{scrl = $(window).scrollTop();}
 
 });
 
