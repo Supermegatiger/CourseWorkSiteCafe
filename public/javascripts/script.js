@@ -31,7 +31,7 @@ $(window).resize();
 let navLinkImgClick = $(".nav_link_img:last").click(function(){
 	if(clCh){
 		$(window).scrollTop(0);
-		$(".nav_search_cont").animate({ width: w },500, function(){$(".nav_search").toggle("clip")}.focus());
+		$(".nav_search_cont").animate({ width: w },500, function(){$(".nav_search").toggle("clip").focus()});
 		clCh = false;
 		
 	 }//else{
