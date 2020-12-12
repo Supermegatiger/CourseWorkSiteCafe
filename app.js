@@ -13,7 +13,7 @@ var indexRouter = require('./routes/index');
 var app = express();
 
 // view engine setup
-app.set('views',(__dirname + 'views'));
+app.set('views',(__dirname + '/views'));
 app.set('view engine', 'hbs');
 app.engine("hbs", expressHbs(
   {
