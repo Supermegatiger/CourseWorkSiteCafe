@@ -4,14 +4,31 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const bodyParser = require("body-parser");
+const urlencodedParser = bodyParser.urlencoded({extended: false});
+const expressHbs = require("express-handlebars");
 var indexRouter = require('./routes/index');
-var adminRouter = require('./routes/adminRouter');
+
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.engine("hbs", expressHbs(
+  {
+      layoutsDir: "views/layout", 
+      defaultLayout: "layout",
+      extname: "hbs",
+      runtimeOptions:{
+          allowProtoPropertiesByDefault: true,
+          allowProtoMethodsByDefault: true
+      }
+  }
+))
+
+app.use(bodyParser.urlencoded({extended : true }));
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -20,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use("/admin", adminRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
