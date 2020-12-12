@@ -301,6 +301,9 @@ option{
 
 
 @media all and  (max-width: 1200px){
+	body{
+		background: url(../images/grey1.png) no-repeat;
+ 	}
 	.main{
 		width: 100%;
 	}
