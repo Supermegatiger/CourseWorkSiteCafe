@@ -1,0 +1,47 @@
+<div class="main"  style="width: 100%;">
+	 <div class="div_admin">
+    <table class=" admin_table">
+         <tr>
+         	<th class="admin_table g">Название</th>
+         	<th class="admin_table g">Ед. изм.</th>
+         	<th class="admin_table g">Вес/Объем</th>
+         	<th class="admin_table g">Цена</th>
+         	<th class="admin_table g">Категория</th>
+         	<th class="admin_table g">Описание</th>
+         	<th class="admin_table g">Адрес изображения</th>
+         </tr>
+
+<form id="f" action="/admin/update" method="POST">
+		{{#with cat}}
+         {{#with ../food}}
+            <tr class="cl">
+            	<input type="hidden" name="id" value="{{this.id}}">
+            	<td class="admin_table g"><input name="name" value="{{this.name}}"></td>
+            	<td class="admin_table g"><input name="unit" value="{{this.unit}}"></td>
+            	<td class="admin_table g"><input name="weight" value="{{this.weight}}"></td>
+            	<td class="admin_table g"><input name="price" value="{{this.price}}"></td>
+            	<td class="admin_table g">
+					<select name="categoryId">
+						<option value="{{this.categoryId}}" selected>{{../this.name}}</option>
+						{{#each ../../cats}}
+							
+							<option value="{{this.id}}">{{this.name}}</option>
+							
+						{{/each}}
+					</select>
+				</td>
+            	<td class="admin_table g"><textarea name="description" cols="50" rows="5" >{{this.description}}</textarea></td>
+            	<td class="admin_table g"><input name="urlIMG" value="{{this.urlIMG}}"></td>
+            </tr>
+         {{/with}}
+		 {{/with}}
+
+	
+    
+</form> 
+
+</table> 
+        <br>
+<input form="f" type="submit" style="outline: none;" class="nav_link" value="Сохранить">
+	 </div>
+</div>

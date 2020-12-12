@@ -1,0 +1,36 @@
+ 
+ <div class="main" style="width: 100%;">
+	 <div class="div_admin">
+    <table class=" admin_table">
+         <tr>
+         	<th class="admin_table g">Id</th>
+         	<th class="admin_table g">Название</th>
+         	<th class="admin_table g">Ед. изм.</th>
+         	<th class="admin_table g">Вес/Объем</th>
+         	<th class="admin_table g">Цена</th>
+         	<th class="admin_table g">Категория</th>
+         	<th class="admin_table g">Описание</th>
+         	<th class="admin_table g">Адрес изображения</th>
+			<th class="admin_table g">Изменить</th>
+
+         </tr>
+
+         {{#each food}}
+            <tr class="cl">
+            	<td class="admin_table g">{{this.id}}</td>
+            	<td class="admin_table g">{{this.name}}</td>
+            	<td class="admin_table g">{{this.unit}}</td>
+            	<td class="admin_table g">{{this.weight}}</td>
+            	<td class="admin_table g">{{this.price}}</td>
+            	<td class="admin_table g">{{this.categoryId}}</td>
+            	<td class="admin_table g" >{{this.description}}</td>
+            	<td class="admin_table g">{{this.urlIMG}}</td>
+				<td class="admin_table g"><a href="/admin/update/{{this.id}}"  class="nav_link">Изменить</a></td>
+            </tr>
+         {{/each}}
+
+     </table>
+	 <br><br>
+	 <a href="/admin/create" style="padding: 20px; width:auto" class="nav_link">Добавить блюдо</a>
+	 </div>
+</div>

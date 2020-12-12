@@ -1,0 +1,41 @@
+<div class="main"  style="width: 100%;">
+	 <div class="div_admin">
+    <table class=" admin_table">
+         <tr>
+         	<th class="admin_table g">Название</th>
+         	<th class="admin_table g">Ед. изм.</th>
+         	<th class="admin_table g">Вес/Объем</th>
+         	<th class="admin_table g">Цена</th>
+         	<th class="admin_table g">Категория</th>
+         	<th class="admin_table g">Описание</th>
+         	<th class="admin_table g">Адрес изображения</th>
+         </tr>
+
+<form id="f" action="/admin/create" method="POST">
+		
+            <tr class="cl">
+            	<td class="admin_table g"><input required name="name" ></td>
+            	<td class="admin_table g"><select name="unit"><option>гр</option><option>мл</option></select></td>
+            	<td class="admin_table g"><input required name="weight" ></td>
+            	<td class="admin_table g"><input required name="price" ></td>
+            	<td class="admin_table g">
+					<select name="categoryId">
+						{{#each cats}}
+							
+							<option value="{{this.id}}">{{this.name}}</option>
+							
+						{{/each}}
+					</select>
+				</td>
+            	<td class="admin_table g"><textarea name="description" cols="50" rows="5" ></textarea></td>
+            	<td class="admin_table g"><input name="urlIMG"></td>
+            </tr>
+	
+    
+</form> 
+
+</table> 
+        <br>
+<input form="f" type="submit" style="outline: none;" class="nav_link" value="Создать">
+	 </div>
+</div>
