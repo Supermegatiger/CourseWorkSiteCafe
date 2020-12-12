@@ -301,9 +301,6 @@ option{
 
 
 @media all and  (max-width: 1200px){
-	body{
-		background: url(../images/grey1.png) no-repeat;
- 	}
 	.main{
 		width: 100%;
 	}
@@ -314,13 +311,12 @@ option{
 		content: none;
 	}
 	.main_img_cont{
-		max-width: 95%;
+		max-width: 90%;
   		margin: 0px auto;
 	}
 	.main_img{
 		filter: blur(1px);
 		transform: scale(1); 
-
 	}
 	.text{
 		font-size: 70%;
@@ -350,10 +346,7 @@ option{
 	.nav_link_img:hover::after{
 		content: none;
 	}
-	.main_img_cont{
-		max-width: 95%;
-  		margin: 0px auto;
-	}
+	
 	.main_img{
 		filter: blur(1px);
 		transform: scale(1); 
@@ -402,7 +395,7 @@ option{
 		grid-template-rows: [r1] 1fr [r2] 1fr [r3] 1fr [r4] 1fr [r5] 1fr [r6] 1fr [r7]; 
 		grid-template-columns: [c1] 1fr [c2];
 		max-width: 90%;
-		  margin: 10px auto;
+		  margin: 5px auto;
 		  grid-gap: 5px;
 		  justify-content: center;
 	}
