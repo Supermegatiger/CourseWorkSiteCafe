@@ -33,10 +33,10 @@ let navLinkImgClick = $(".nav_link_img:last").click(function(){
 		$(".nav_search_cont").animate({ width: w },500, function(){$(".nav_search").toggle("clip")});
 		clCh = false;
 		
-	}else{
-		$(".nav_search").toggle("clip", function(){$(".nav_search_cont").animate({ width: w1},500);});
-		clCh = true;
-	}
+	// }else{
+	// 	$(".nav_search").toggle("clip", function(){$(".nav_search_cont").animate({ width: w1},500);});
+	// 	clCh = true;
+	// }
 	
 });
 
@@ -150,7 +150,7 @@ let scrl = $(window).scrollTop();
 
 
 $(window).scroll(function(){
-	if($(window).scrollTop() > scrl ){
+	if(($(window).scrollTop() > scrl) || ($(window).scrollTop() == 0) ){
 			$(".nav_menu_link").css({"padding":"0"});
 			$("nav").html("");
 			$feat.clone(true, true).appendTo("nav");

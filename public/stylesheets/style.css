@@ -215,7 +215,7 @@ div.cat_menu{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	filter: grayscale(50%) blur(2px) sepia(50%);
+	filter: grayscale(20%) blur(2px) sepia(20%);
 	transform: scale(1.2); 
 }
 .main_img_link{
@@ -299,6 +299,11 @@ option{
 
 
 @media all and  (max-width: 1200px){
+	body{
+        background: url("../images/grey1.png") no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+    }
 	.main,footer{
 		width: 100%;
 		margin-left: 5%;
