@@ -62,7 +62,7 @@ header{
 	background-color: #1c1d1d;
 	text-align: center;
 	flex-wrap: wrap;
-	display: flex;
+
 	flex-grow: 1;
 	width: 60%;
 	background: rgb(51,48,46);
@@ -309,7 +309,7 @@ option{
 		content: none;
 	}
 	.main_img_cont{
-		max-width: 100%;
+		max-width: 90%;
   		margin: 0px auto;
 	}
 	.main_img{
@@ -392,7 +392,7 @@ option{
 		display: grid;
 		grid-template-rows: [r1] 1fr [r2] 1fr [r3] 1fr [r4] 1fr [r5] 1fr [r6] 1fr [r7]; 
 		grid-template-columns: [c1] 1fr [c2];
-		max-width: 100%;
+		max-width: 90%;
 		  margin: 5px auto;
 		  grid-gap: 5px;
 		  justify-content: center;
@@ -403,7 +403,7 @@ option{
 }
 @media all and(max-width: 400px){
 	.nav_menu_link{
-		font-size: 100%;
+		font-size: 80%;
 	}
 	.admin_table{
 		font-size: 30%;
