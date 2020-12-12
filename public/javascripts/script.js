@@ -14,6 +14,8 @@ $(window).resize(function(){
 	let h = $("header").css("height");
 	$(".main").css("marginTop", h);
 	$(".main").css("marginTop", "+=1%");
+	let w = $(".main").css("width");
+	$("header").css("width", h);
 });
 
 $(window).resize();
